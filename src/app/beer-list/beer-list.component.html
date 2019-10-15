@@ -1,7 +1,7 @@
 <div class="container">
   <br>
   <br>
-  <h4>Beer List <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h4>
+  <h4>Nuestras Birras<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h4>
   <br>
   <table class="table table-dark">
     <thead>
@@ -33,15 +33,14 @@
           <div class="row">
             <button [disabled]="beer.stock==0" type="button" class="btn btn-success col-md-3" (click)="masBirra(beer)">
               <i class="fas fa-angle-up"></i></button>
-              <input min="0" type="text" class="form-control col-md-4" aria-label="Small" [(ngModel)]="beer.cant">
+              <!-- <input min="0" type="text" class="form-control col-md-4" aria-label="Small" [(ngModel)]="beer.cant"> -->
+              <p>{{beer.cant}}</p>
             <button [disabled]="beer.stock==0 && beer.cant==0"  type="button" class="btn btn-danger col-md-3" (click)="menosBirra(beer)">
               <i class="fas fa-angle-down"></i></button>
           </div>
         </td>
-        <td>{{beer.image}}</td>
+        <td><img src="{{beer.image}}"></td>
       </tr>
     </tbody>
   </table>
-  <br>
-  <br>
 </div>

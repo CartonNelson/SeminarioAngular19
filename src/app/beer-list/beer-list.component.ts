@@ -12,8 +12,7 @@ import {analyzeNgModules} from '@angular/compiler';
 })
 export class BeerListComponent implements OnInit {
   public beers: Beer[];
-  @Output() public beerCart: string[];
-  //public imgSource:string;
+
 
   constructor(private beerDataService: BeerDataService) {
 

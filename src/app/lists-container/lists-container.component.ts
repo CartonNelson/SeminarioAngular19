@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, Input } from '@angular/core';
+import{ShoppingCartComponent} from'../shopping-cart/shopping-cart.component';
+import {BeerListComponent} from '../beer-list/beer-list.component';
+
 
 @Component({
   selector: 'app-lists-container',
@@ -10,6 +13,7 @@ export class ListsContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
+  
 }
