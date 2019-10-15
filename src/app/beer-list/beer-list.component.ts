@@ -3,6 +3,7 @@ import { Beer } from './Beer';
 import { BEERS } from './mocks';
 import {BeerDataService} from '../services/beer-data.service';
 import {analyzeNgModules} from '@angular/compiler';
+import {CartService} from '../services/cart.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class BeerListComponent implements OnInit {
   public beers: Beer[];
 
 
-  constructor(private beerDataService: BeerDataService) {
+  constructor(private beerDataService: BeerDataService, private cartService:CartService) {
 
   }
 
@@ -42,7 +43,21 @@ export class BeerListComponent implements OnInit {
 
   }
 
-
+  // public addCart(beer:Beer){
+  //   this.cartService.addToCart(beer);
+  //   //beer.stock-=beer.cant;
+  //   beer.cant=0;
+  // }
+  public addCart(){
+    this.beers.forEach( beer =>{
+      if (beer.cant>0) {
+        this.cartService.addToCart(beer);
+          beer.cant=0;    
+      }
+    
+    });
+    
+  }
   public masBirra(beer:Beer) {
     if (beer.stock > 0) {
       beer.stock--;
