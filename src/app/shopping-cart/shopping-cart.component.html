@@ -3,7 +3,25 @@
 <br>
 
 <h4>Shopping Cart</h4>
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col" >Nombre</th>
+        <th scope="col" >Tipo</th>
+        <th scope="col" >Precio</th>
+        <th scope="col" >Cant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let beer of cart">
 
-
-
+        <td>{{beer.name}}</td>
+        <td>{{beer.style}}</td>
+        <td [ngClass]="{'green': beer.offer}">
+          <span>{{beer.price | currency:''}}</span>
+        </td>
+        <td>{{beer.cant}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
